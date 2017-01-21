@@ -11,7 +11,10 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    @IBOutlet weak var wordTextField: NSTextField!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        wordTextField.becomeFirstResponder()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

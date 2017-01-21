@@ -11,24 +11,27 @@ import Cocoa
 class StatusMenuController: NSObject {
     
     @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet weak var dictionaryView: DictionaryView!
+    
+    var dictionaryMenuItem: NSMenuItem!
     
     let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     
     let dictionaryAPI = DictionaryAPI()
     
-    @IBAction func updateClicked(_ sender: NSMenuItem) {
-        let keyword = "sentido"
-        
-        dictionaryAPI.fetchLiteralExpression(keyword: keyword) { response, error in
-            if(response.count > 0) {
-                for word in response {
-                    let genre = word["genre"] as String!
-                    let def = word["definition"] as String!
-                    
-                    print("\(keyword) - (\(genre!)) \(def!)")
+    @IBAction func textFieldAction(_ sender: NSTextField) {
+        if(sender.stringValue != "") {
+            dictionaryAPI.fetchLiteralExpression(keyword: sender.stringValue) { response, error in
+                if(response.count > 0) {
+                    for word in response {
+                        let genre = word["genre"] as String!
+                        let def = word["definition"] as String!
+                        
+                        self.dictionaryView.update(definition: "\(sender.stringValue) - \(genre!) \(def!)")
+                    }
+                } else {
+                    print(error!.localizedDescription)
                 }
-            } else {
-                print(error!.localizedDescription)
             }
         }
     }
@@ -42,6 +45,9 @@ class StatusMenuController: NSObject {
         icon?.isTemplate = true
         statusItem.image = icon
         statusItem.menu = statusMenu
+        
+        dictionaryMenuItem = statusMenu.item(withTitle: "Item")
+        dictionaryMenuItem.view = dictionaryView
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

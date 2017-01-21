@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -12,22 +14,24 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="iOD" customModuleProvider="target"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="iOD" customModuleProvider="target">
+            <connections>
+                <outlet property="wordTextField" destination="RiH-xw-lwx" id="Ffi-eB-8W8"/>
+            </connections>
+        </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="yjr-fm-lAf" customClass="StatusMenuController" customModule="iOD" customModuleProvider="target">
             <connections>
+                <outlet property="dictionaryView" destination="Smg-2e-dof" id="HyT-7L-P9Q"/>
                 <outlet property="statusMenu" destination="AIX-hE-UvS" id="nkG-G4-uf1"/>
             </connections>
         </customObject>
         <menu id="AIX-hE-UvS">
             <items>
-                <menuItem title="Update" id="Sgv-Oj-uOu">
+                <menuItem title="Item" id="C08-48-ono">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="updateClicked:" target="yjr-fm-lAf" id="T7u-ft-mPb"/>
-                    </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="Gdh-cK-E6W"/>
+                <menuItem isSeparatorItem="YES" id="Cjg-94-LfV"/>
                 <menuItem title="Quit" id="D8Q-lI-zri">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -36,5 +40,64 @@
                 </menuItem>
             </items>
         </menu>
+        <customView id="Smg-2e-dof" customClass="DictionaryView" customModule="iOD" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="201"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <box fixedFrame="YES" boxType="custom" borderType="bezel" cornerRadius="4" title="Definition" translatesAutoresizingMaskIntoConstraints="NO" id="oSa-HN-e2t">
+                    <rect key="frame" x="0.0" y="156" width="200" height="45"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <view key="contentView" ambiguous="YES" id="DYx-fd-lhO">
+                        <rect key="frame" x="1" y="1" width="198" height="43"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiH-xw-lwx">
+                                <rect key="frame" x="20" y="11" width="158" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Definition" bezelStyle="round" id="DE1-Lo-FKX">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="textFieldAction:" target="yjr-fm-lAf" id="EKs-fh-yFD"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                    </view>
+                </box>
+                <scrollView wantsLayer="YES" fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvM-AQ-u8V">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="136"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <clipView key="contentView" ambiguous="YES" id="C8x-wO-dRo">
+                        <rect key="frame" x="1" y="1" width="198" height="134"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView ambiguous="YES" importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="cRw-4f-tY5">
+                                <rect key="frame" x="0.0" y="-1" width="198" height="134"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="198" height="134"/>
+                                <size key="maxSize" width="463" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Gsr-VD-FL6">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="C9b-pz-XyQ">
+                        <rect key="frame" x="183" y="1" width="16" height="134"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <connections>
+                <outlet property="definitionTextView" destination="cRw-4f-tY5" id="M6a-2i-wqP"/>
+            </connections>
+            <point key="canvasLocation" x="-158" y="344.5"/>
+        </customView>
     </objects>
 </document>

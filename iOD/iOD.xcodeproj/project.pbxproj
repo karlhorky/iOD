@@ -17,6 +17,7 @@
 		260DB9A71E32FD03009D06B7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 260DB9A51E32FD03009D06B7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		260DB9B01E3302F7009D06B7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260DB9AF1E3302F7009D06B7 /* SwiftyJSON.framework */; };
 		260DB9B11E3302F7009D06B7 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 260DB9AF1E3302F7009D06B7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		260DB9B31E338CB5009D06B7 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260DB9B21E338CB5009D06B7 /* DictionaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		260DB9A11E32FAAE009D06B7 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Cartfile; path = iOD/Cartfile; sourceTree = "<group>"; };
 		260DB9A51E32FD03009D06B7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = iOD/Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		260DB9AF1E3302F7009D06B7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = iOD/Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
+		260DB9B21E338CB5009D06B7 /* DictionaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				260DB9901E32908B009D06B7 /* AppDelegate.swift */,
 				260DB9921E32908B009D06B7 /* Assets.xcassets */,
 				260DB9941E32908B009D06B7 /* MainMenu.xib */,
+				260DB9B21E338CB5009D06B7 /* DictionaryView.swift */,
 				260DB99F1E32F4A6009D06B7 /* DictionaryAPI.swift */,
 				260DB99D1E32F34E009D06B7 /* StatusMenuController.swift */,
 				260DB9971E32908B009D06B7 /* Info.plist */,
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				260DB9B31E338CB5009D06B7 /* DictionaryView.swift in Sources */,
 				260DB99E1E32F34E009D06B7 /* StatusMenuController.swift in Sources */,
 				260DB9911E32908B009D06B7 /* AppDelegate.swift in Sources */,
 				260DB9A01E32F4A6009D06B7 /* DictionaryAPI.swift in Sources */,
