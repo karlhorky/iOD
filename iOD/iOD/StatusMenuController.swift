@@ -17,14 +17,16 @@ class StatusMenuController: NSObject {
     let dictionaryAPI = DictionaryAPI()
     
     @IBAction func updateClicked(_ sender: NSMenuItem) {
-        let keyword = "jagunco"
+        let keyword = "sentido"
         
         dictionaryAPI.fetchLiteralExpression(keyword: keyword) { response, error in
-            if((response) != nil) {
-                let genre = response!["genre"] as! String!
-                let def = response!["definition"] as! String!
-            
-                print("\(keyword) - (\(genre!)) \(def!)")
+            if(response.count > 0) {
+                for word in response {
+                    let genre = word["genre"] as String!
+                    let def = word["definition"] as String!
+                    
+                    print("\(keyword) - (\(genre!)) \(def!)")
+                }
             } else {
                 print(error!.localizedDescription)
             }
