@@ -17,7 +17,9 @@
 		260DB9B11E3302F7009D06B7 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 260DB9AF1E3302F7009D06B7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		260DB9C21E33E420009D06B7 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260DB9C01E33E420009D06B7 /* DictionaryViewController.swift */; };
 		260DB9C31E33E420009D06B7 /* DictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 260DB9C11E33E420009D06B7 /* DictionaryViewController.xib */; };
-		260DB9CA1E35A001009D06B7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 260DB9C91E35A001009D06B7 /* MainMenu.xib */; };
+		260DB9CD1E36A053009D06B7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 260DB9CB1E36A053009D06B7 /* MainMenu.xib */; };
+		265587651E39637F00F4D839 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265587641E39637F00F4D839 /* EventMonitor.swift */; };
+		265587671E396F2E00F4D839 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265587661E396F2E00F4D839 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,7 +48,9 @@
 		260DB9AF1E3302F7009D06B7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = iOD/Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		260DB9C01E33E420009D06B7 /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 		260DB9C11E33E420009D06B7 /* DictionaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DictionaryViewController.xib; sourceTree = "<group>"; };
-		260DB9C91E35A001009D06B7 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		260DB9CC1E36A053009D06B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = iOD/Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		265587641E39637F00F4D839 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		265587661E396F2E00F4D839 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +88,14 @@
 		260DB98F1E32908B009D06B7 /* iOD */ = {
 			isa = PBXGroup;
 			children = (
-				260DB9C91E35A001009D06B7 /* MainMenu.xib */,
 				260DB9901E32908B009D06B7 /* AppDelegate.swift */,
+				260DB99F1E32F4A6009D06B7 /* DictionaryAPI.swift */,
 				260DB9C01E33E420009D06B7 /* DictionaryViewController.swift */,
 				260DB9C11E33E420009D06B7 /* DictionaryViewController.xib */,
+				265587641E39637F00F4D839 /* EventMonitor.swift */,
 				260DB9921E32908B009D06B7 /* Assets.xcassets */,
-				260DB99F1E32F4A6009D06B7 /* DictionaryAPI.swift */,
+				260DB9CB1E36A053009D06B7 /* MainMenu.xib */,
+				265587661E396F2E00F4D839 /* Reachability.swift */,
 				260DB9971E32908B009D06B7 /* Info.plist */,
 			);
 			path = iOD;
@@ -158,7 +164,7 @@
 				260DB9A21E32FAAE009D06B7 /* Cartfile in Resources */,
 				260DB9931E32908B009D06B7 /* Assets.xcassets in Resources */,
 				260DB9C31E33E420009D06B7 /* DictionaryViewController.xib in Resources */,
-				260DB9CA1E35A001009D06B7 /* MainMenu.xib in Resources */,
+				260DB9CD1E36A053009D06B7 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,10 +178,24 @@
 				260DB9C21E33E420009D06B7 /* DictionaryViewController.swift in Sources */,
 				260DB9911E32908B009D06B7 /* AppDelegate.swift in Sources */,
 				260DB9A01E32F4A6009D06B7 /* DictionaryAPI.swift in Sources */,
+				265587671E396F2E00F4D839 /* Reachability.swift in Sources */,
+				265587651E39637F00F4D839 /* EventMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		260DB9CB1E36A053009D06B7 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				260DB9CC1E36A053009D06B7 /* Base */,
+			);
+			name = MainMenu.xib;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		260DB9981E32908B009D06B7 /* Debug */ = {
