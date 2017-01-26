@@ -6,6 +6,9 @@ This app is not intended to be used on your daily basis because the API that fee
 
 # Usage
 Just clone or download the ZIP of this repo and run on your Xcode. You should use at least version 8 of the Xcode and Swift 3.
+##### Make sure to install the dependencies of the project. I'm using Carthage. You can install them by acessing the dir and writing `carthage update --platform macOS --no-use-binaries`. The dependencies are:
+- Alamofire
+- SwiftyJSON
 
 # Thanks to
 - [Freepik] for the beautiful icon
