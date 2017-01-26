@@ -45,6 +45,7 @@ class DictionaryViewController: NSViewController {
                     }
                 } else {
                     DispatchQueue.main.async() {
+                        self.definitionTextView.string = ""
                         self.definitionTextView.textStorage?.append(NSAttributedString(string: "We couldn't find that :(\n\n", attributes: [NSForegroundColorAttributeName: NSColor.white]))
                     }
                 }
@@ -55,6 +56,10 @@ class DictionaryViewController: NSViewController {
                 self.printConnErr()
             }
         }
+    }
+    
+    @IBAction func exitClicked(_ sender: NSButton) {
+        NSApplication.shared().terminate(self)
     }
     
     func checkInternetConn() -> Bool {
