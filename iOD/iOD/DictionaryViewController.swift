@@ -40,7 +40,7 @@ class DictionaryViewController: NSViewController {
                         let def = word["definition"] as String!
                         
                         DispatchQueue.main.async() {
-                            self.definitionTextView.textStorage?.append(NSAttributedString(string: "\(sender.stringValue) - \(genre!) \(def!)\n\n", attributes: [NSForegroundColorAttributeName: NSColor.white]))
+                            self.definitionTextView.textStorage?.append(NSAttributedString(string: "\(sender.stringValue) - \(genre!) \(def!.replacingOccurrences(of: "<br/>", with: "\n").replacingOccurrences(of: "_", with: ""))\n\n", attributes: [NSForegroundColorAttributeName: NSColor.white]))
                         }
                     }
                 } else {
